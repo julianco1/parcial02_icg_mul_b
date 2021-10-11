@@ -1,0 +1,33 @@
+<input type=text size=2 id='nf'/>
+<button onclick='main()'>Ejecutar</button>
+<canvas id='tablero' width=800 height=800></canvas>
+<script>
+     var ctx;
+     function color(r, g, b) 
+{
+        return 'rgba(' + r*2.55 + ',' + g*2.55 + ',' + b*2.55 + ')'
+	}
+ function draw() {
+  ctx = document.getElementById('tablero').getContext('2d');
+ 
+  ctx.fillStyle = 'rgb(0, 153, 255)';//azul
+  ctx.fillRect(170, 0, 70, 180);
+  ctx.fillStyle = 'rgb(102, 204, 0)';//verde
+  ctx.fillRect(90, 0, 70, 180);
+  ctx.fillStyle = 'rgb(255, 51, 0)';//rojo
+  ctx.fillRect(0, 0, 70, 180);
+
+
+
+ 
+  for (var i = 0; i < 10; i++) 
+{
+    ctx.fillStyle = 'rgba(255, 255, 255, ' + (i + 1) / 10 + ')';
+    for (var j = 0; j < 3; j++) {
+      ctx.fillRect(10,14 + i * 14 + j * 37.5, 13, 27.5);
+    }
+  }
+}
+draw();
+
+</script>
